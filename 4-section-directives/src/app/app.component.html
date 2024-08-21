@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Angular Directives</h1>
+
+  <p appStyle="red" [dStyles]="{ borderRadius: '5px',fontWeight: 'bold', border: '1px solid blue' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, repudiandae?</p>
+  <p appStyle="blue" [dStyles]="{ borderRadius: '5px',fontWeight: 'bold', border: '1px solid red' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, repudiandae?</p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+<!--  <div *ngIf="isVisible" class="wrap">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis facere hic incidunt maiores mollitia repudiandae rerum sapiente voluptatibus!</p>-->
+<!--  </div>-->
+
+<!--  <ng-template [ngIf]="isVisible">-->
+<!--    <div class="wrap">-->
+<!--      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis facere hic incidunt maiores mollitia repudiandae rerum sapiente voluptatibus!</p>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--  <div *appIfNot="!isVisible" class="wrap">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis facere hic incidunt maiores mollitia repudiandae rerum sapiente voluptatibus!</p>-->
+<!--  </div>-->
+  <ng-template [appIfNot]="!isVisible">
+    <div class="wrap">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis facere hic incidunt maiores mollitia repudiandae rerum sapiente voluptatibus!</p>
+    </div>
+  </ng-template>
+</div>
