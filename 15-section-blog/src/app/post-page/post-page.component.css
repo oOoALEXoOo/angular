@@ -1,0 +1,16 @@
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.post__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post__author {
+  margin-right: 2rem;
+}
+
+/*# sourceMappingURL=post-page.component.css.map */
