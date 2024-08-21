@@ -1,0 +1,91 @@
+<h1>{{ title }}</h1>
+
+<p>{{ now | date: 'long' | uppercase }}</p>
+
+<!--<ul style="list-style: none">-->
+<!--  <li *ngFor="let post of posts">-->
+<!--    <p>{{ post.title }} - <b>{{ post.author }}</b></p>-->
+<!--    <ul style="list-style: none">-->
+<!--      <li *ngFor="let comment of post.comments">-->
+<!--        <div>-->
+<!--          <small>{{ comment.name }}</small>-->
+<!--          <p>{{ comment.text }}</p>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let number of array; let idx = index">-->
+<!--    {{ idx + 1 }}: <strong>{{ number }}</strong>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<button (click)="toggle = !toggle">Toggle</button>-->
+<!--<button (click)="toggle = 111">Set 111</button>-->
+
+<!--<div [ngSwitch]="toggle">-->
+<!--  <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>-->
+<!--  <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit.</p>-->
+<!--  <p *ngSwitchDefault>Lorem ipsum.</p>-->
+<!--</div>-->
+
+<!--<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, repudiandae!</p>-->
+<!--<ng-template #blueP>-->
+<!--  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, repudiandae!</p>-->
+<!--</ng-template>-->
+
+<!--<p [ngClass]="{-->
+<!--  red: backgroundToggle,-->
+<!--  blue: !backgroundToggle-->
+<!--}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, debitis.</p>-->
+
+<!--<p-->
+<!--  [class.red]="backgroundToggle"-->
+<!--  [class.blue]="!backgroundToggle"-->
+<!--&gt;-->
+<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, similique!-->
+<!--</p>-->
+
+<!--<div [ngStyle]="{-->
+<!--  width: '200px',-->
+<!--  height: '200px',-->
+<!--  borderRadius: '5px',-->
+<!--  border: '1px solid #ccc',-->
+<!--  background: backgroundToggle ? 'red' : 'blue'-->
+<!--}"></div>-->
+
+<!--<input type="text" [(ngModel)]="inputValue">-->
+<!--<p><strong>{{ inputValue }}</strong></p>-->
+
+<!--<h2>{{ title }}</h2>-->
+
+<!--<p><strong>{{ number - 2 }}</strong></p>-->
+<!--<p><strong>{{ array }}</strong></p>-->
+<!--<p><strong>{{ obj.b.c }}</strong></p>-->
+
+<!--<p><strong>{{ 40 + 2 }}</strong></p>-->
+<!--<p><strong>{{ 'Hello' + ', World!' }}</strong></p>-->
+
+<!--<img [src]="logo" alt="">-->
+
+<!--<button (click)="onClick()">Click me!</button>-->
+
+<!--<input-->
+<!--  type="text"-->
+<!--  (keyup.enter)="onInput($event)"-->
+<!--  (blur)="onBlur(input.value)"-->
+<!--  #input-->
+<!--&gt;-->
+<!--<p><strong>{{ inputValue }}</strong></p>-->
+
+<!--<hr>-->
+
+<!--<app-post></app-post>-->
+<!--<app-post></app-post>-->
+
+<!--<hr>-->
+
+<!--<app-post4></app-post4>-->
+<!--<app-post4></app-post4>-->
