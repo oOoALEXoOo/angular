@@ -1,0 +1,22 @@
+.container {
+  display: inline-block;
+
+  &__button {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background: red;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.active {
+      background: green;
+    }
+  }
+}

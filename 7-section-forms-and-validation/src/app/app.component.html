@@ -1,0 +1,14 @@
+<div class="container">
+<!--  <h1>Angular Forms</h1>-->
+<!--  <app-user-form></app-user-form>-->
+
+  <h1>Angular NgModels</h1>
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handleChange()"
+  ></app-switch>
+
+  <hr>
+
+  <p>appState: {{ appState }}</p>
+</div>

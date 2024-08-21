@@ -1,0 +1,83 @@
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-control">
+    <label>Email</label>
+    <input type="text" placeholder="Email" formControlName="email">
+
+    <div
+      class="validation"
+      *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+    >
+      <small *ngIf="form.get('email')?.errors?.['required']">
+        Email is required
+      </small>
+      <small *ngIf="form.get('email')?.errors?.['email']">
+        Enter correct email
+      </small>
+      <small *ngIf="form.get('email')?.errors?.['restrictedEmail']">
+        Email {{ form.get('email')?.value }} is forbidden
+      </small>
+
+      <small *ngIf="form.get('email')?.errors?.['uniqEmail']">
+        Email {{ form.get('email')?.value }} has already been taken
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Password</label>
+    <input type="password" placeholder="Password" formControlName="password">
+
+    <div
+      class="validation"
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+    >
+      <small *ngIf="form.get('password')?.errors?.['required']">Password is required </small>
+      <small *ngIf="form.get('password')?.errors?.['minlength']">
+        Password's length must be at least {{ form.get('password')?.errors?.['minlength']?.requiredLength }} symbols.
+        Currently is {{ form.get('password')?.errors?.['minlength']?.actualLength }} symbols
+      </small>
+    </div>
+  </div>
+
+  <div class="card" formGroupName="address">
+    <h2>Address</h2>
+
+    <div class="form-control">
+      <label>Country</label>
+
+      <select formControlName="country">
+        <option value="fr">France</option>
+        <option value="uk">England</option>
+        <option value="ua">Ukraine</option>
+      </select>
+    </div>
+
+    <div class="form-control">
+      <input type="text" placeholder="City" formControlName="city">
+    </div>
+
+    <button class="btn" type="button" (click)="setCapital()">Choose capital</button>
+  </div>
+
+  <div class="card" formGroupName="skills">
+    <h2>Your skills</h2>
+    <button class="btn" type="button" (click)="addSkill()">Add skill</button>
+
+    <div
+      class="form-control"
+      *ngFor="let skill of skills; let idx = index"
+    >
+      <label>Skill {{ idx + 1 }}</label>
+      <input type="text" [formControlName]="idx">
+
+      <div
+        class="validation"
+        *ngIf="skill.invalid && skill.touched"
+      >
+        <small *ngIf="skill.errors?.['required']">Skill is required</small>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Send</button>
+</form>
