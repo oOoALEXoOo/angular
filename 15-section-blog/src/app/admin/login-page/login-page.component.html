@@ -1,0 +1,89 @@
+<form
+  class="login-page__form card"
+  *ngIf="!authService.isAuthenticated(); else loggedInAlert"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
+  <h2>Login to the Admin Panel</h2>
+
+  <div
+    class="alert alert-danger"
+    *ngIf="authService.error$ | async as error"
+  >
+    {{ error }}
+  </div>
+
+  <div
+    class="alert alert-info"
+    *ngIf="message"
+  >
+    {{ message }}
+  </div>
+
+  <div
+    class="form-control"
+    [class.invalid]="form.get('email')?.touched && form.get('email')?.invalid"
+  >
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      [formControl]="getControl('email')"
+    >
+
+    <div
+      class="validation"
+      *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+    >
+      <small *ngIf="form.get('email')?.errors?.['required']; else emailValidation">
+        Email is required.
+      </small>
+
+      <ng-template #emailValidation>
+        <small *ngIf="form.get('email')?.errors?.['email']">
+          Email {{ form.get('email')?.value }} is incorrect.
+        </small>
+      </ng-template>
+    </div>
+  </div>
+
+  <div
+    class="form-control"
+    [class.invalid]="form.get('password')?.touched && form.get('password')?.invalid"
+  >
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="password"
+      [formControl]="getControl('password')"
+    >
+
+    <div
+      class="validation"
+      *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+    >
+      <small *ngIf="form.get('password')?.errors?.['required']; else minLengthValidation">
+        Password is required.
+      </small>
+
+      <ng-template #minLengthValidation>
+        <small *ngIf="form.get('password')?.errors?.['minlength']">
+          Password's length must be at least {{ form.get('password')?.errors?.['minlength'].requiredLength }} symbols.
+          Currently is {{ form.get('password')?.errors?.['minlength'].actualLength }} symbols.
+        </small>
+      </ng-template>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid || submitted"
+  >Login</button>
+</form>
+
+<ng-template #loggedInAlert>
+  <div class="alert alert-white text-center">
+    You have already logged in.
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+.alert__wrapper {
+  max-width: 400px;
+  position: fixed;
+  top: 55px;
+  right: 10px;
+}
+.alert__alert-message {
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=alert.component.css.map */

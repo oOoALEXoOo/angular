@@ -1,0 +1,12 @@
+.alert {
+  &__wrapper {
+    max-width: 400px;
+    position: fixed;
+    top: 55px;
+    right: 10px;
+  }
+
+  &__alert-message {
+    border-radius: 10px;
+  }
+}
