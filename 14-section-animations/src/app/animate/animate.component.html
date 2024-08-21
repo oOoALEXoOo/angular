@@ -1,0 +1,5 @@
+<button class="btn" (click)="visible = !visible">Toggle Visibility</button>
+
+<hr />
+
+<div *ngIf="visible" [@rect] class="rect"></div>
